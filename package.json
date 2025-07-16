@@ -1,0 +1,57 @@
+{
+  "name": "angular-microfrontend-template",
+  "version": "1.0.0",
+  "description": "A complete Angular micro-frontend architecture template using Module Federation",
+  "scripts": {
+    "install:all": "npm run install:shell && npm run install:feature",
+    "install:shell": "cd shell-app && npm install",
+    "install:feature": "cd feature1-app && npm install",
+    "start": "npm run start:dev",
+    "start:dev": "concurrently \"npm run start:feature\" \"npm run start:shell\"",
+    "start:shell": "cd shell-app && npm start",
+    "start:feature": "cd feature1-app && npm start",
+    "build": "npm run build:feature && npm run build:shell",
+    "build:shell": "cd shell-app && npm run build",
+    "build:feature": "cd feature1-app && npm run build",
+    "build:prod": "npm run build:feature:prod && npm run build:shell:prod",
+    "build:shell:prod": "cd shell-app && npm run build -- --configuration production",
+    "build:feature:prod": "cd feature1-app && npm run build -- --configuration production",
+    "test": "npm run test:shell && npm run test:feature",
+    "test:shell": "cd shell-app && npm run test -- --watch=false --browsers=ChromeHeadless",
+    "test:feature": "cd feature1-app && npm run test -- --watch=false --browsers=ChromeHeadless",
+    "lint": "npm run lint:shell && npm run lint:feature",
+    "lint:shell": "cd shell-app && npm run lint",
+    "lint:feature": "cd feature1-app && npm run lint",
+    "clean": "npm run clean:shell && npm run clean:feature",
+    "clean:shell": "cd shell-app && rm -rf node_modules dist .angular",
+    "clean:feature": "cd feature1-app && rm -rf node_modules dist .angular",
+    "setup": "./setup.sh"
+  },
+  "keywords": [
+    "angular",
+    "microfrontend",
+    "micro-frontend",
+    "module-federation",
+    "webpack",
+    "template",
+    "boilerplate",
+    "architecture"
+  ],
+  "author": "[Your Name]",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/[your-username]/[your-repo-name].git"
+  },
+  "bugs": {
+    "url": "https://github.com/[your-username]/[your-repo-name]/issues"
+  },
+  "homepage": "https://github.com/[your-username]/[your-repo-name]#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}

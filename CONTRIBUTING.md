@@ -1,56 +1,216 @@
-# Contributing Guidelines
+# Contributing to Angular Micro-Frontend Template
 
-Thank you for your interest in contributing to our project. Whether it's a bug report, new feature, correction, or additional
-documentation, we greatly value feedback and contributions from our community.
+We love your input! We want to make contributing to this Angular micro-frontend template as easy and transparent as possible, whether it's:
 
-Please read through this document before submitting any issues or pull requests to ensure we have all the necessary
-information to effectively respond to your bug report or contribution.
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
 
-## Reporting Bugs/Feature Requests
+## 🚀 Quick Start for Contributors
 
-We welcome you to use the GitHub issue tracker to report bugs or suggest features.
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/[your-username]/[your-repo-name].git`
+3. Create a feature branch: `git checkout -b feature/amazing-feature`
+4. Install dependencies: `npm run install:all`
+5. Make your changes and test them: `npm start`
+6. Commit your changes: `git commit -m 'Add some amazing feature'`
+7. Push to the branch: `git push origin feature/amazing-feature`
+8. Open a Pull Request
 
-When filing an issue, please check existing open, or recently closed, issues to make sure somebody else hasn't already
-reported the issue. Please try to include as much information as you can. Details like these are incredibly useful:
+## 🐛 Reporting Bugs
 
-- A reproducible test case or series of steps
-- The version of our code being used
-- Any modifications you've made relevant to the bug
-- Anything unusual about your environment or deployment
+**Great Bug Reports** tend to have:
 
-## Contributing via Pull Requests
+- A quick summary and/or background
+- Steps to reproduce
+  - Be specific!
+  - Give sample code if you can
+- What you expected would happen
+- What actually happens
+- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
 
-Contributions via pull requests are much appreciated. Before sending us a pull request, please ensure that:
+**Use the bug report template** when creating issues.
 
-1. You are working against the latest source on the _main_ branch.
-2. You check existing open, and recently merged, pull requests to make sure someone else hasn't addressed the problem already.
-3. You open an issue to discuss any significant work - we would hate for your time to be wasted.
+## 💡 Suggesting Features
 
-To send us a pull request, please:
+We track feature requests as GitHub issues. When creating a feature request:
 
-1. Fork the repository.
-2. Modify the source; please focus on the specific change you are contributing. If you also reformat all the code, it will be hard for us to focus on your change.
-3. Ensure local tests pass.
-4. Commit to your fork using clear commit messages.
-5. Send us a pull request, answering any default questions in the pull request interface.
-6. Pay attention to any automated CI failures reported in the pull request, and stay involved in the conversation.
+- **Use a clear and descriptive title**
+- **Provide a detailed description** of the suggested feature
+- **Explain why this feature would be useful** to most users
+- **List some other projects where this feature exists** (if applicable)
 
-GitHub provides additional documentation on forking repositories and creating pull requests.
+## 📝 Pull Request Process
 
-## Finding contributions to work on
+1. **Update the README.md** with details of changes if applicable
+2. **Add tests** for any new functionality
+3. **Ensure all tests pass**: `npm test`
+4. **Update documentation** for any changed functionality
+5. **Follow the coding standards** outlined below
+6. **Squash commits** if you have multiple commits for a single feature
 
-Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.
+### Pull Request Requirements
 
-## Code of Conduct
+- [ ] Tests pass locally
+- [ ] Code follows the style guidelines
+- [ ] Self-review of code completed
+- [ ] Documentation updated (if applicable)
+- [ ] No merge conflicts
 
-This project adheres to a standard code of conduct to ensure a welcoming and inclusive environment for all contributors.
+## 🎨 Code Style Guidelines
 
-Please be respectful and considerate in all interactions. We are committed to providing a harassment-free experience for everyone.
+### TypeScript/Angular Standards
 
-## Security issue notifications
+- Follow the [Angular Style Guide](https://angular.io/guide/styleguide)
+- Use TypeScript strict mode
+- Prefer `const` over `let`, avoid `var`
+- Use meaningful variable and function names
+- Add type annotations for all function parameters and return types
 
-If you discover a potential security issue in this project, please create a private security advisory through GitHub or contact the project maintainers directly. Please do **not** create a public github issue.
+### File Organization
 
-## Licensing
+- Keep components small and focused
+- Use barrel exports (`index.ts`) for clean imports
+- Group related files in feature folders
+- Follow Angular's recommended folder structure
 
-See the [LICENSE](LICENSE) file for our project's licensing. We will ask you to confirm the licensing of your contribution.
+### Naming Conventions
+
+- **Files**: kebab-case (e.g., `my-component.ts`)
+- **Classes**: PascalCase (e.g., `MyComponent`)
+- **Variables/Functions**: camelCase (e.g., `myVariable`)
+- **Constants**: SCREAMING_SNAKE_CASE (e.g., `MY_CONSTANT`)
+
+### Code Formatting
+
+We use Prettier and ESLint. Before committing:
+
+```bash
+npm run lint
+npm run format  # if available
+```
+
+## 🧪 Testing Guidelines
+
+- Write unit tests for all new components and services
+- Aim for at least 80% code coverage
+- Use meaningful test descriptions
+- Mock external dependencies
+- Test both success and error scenarios
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+## 📚 Documentation
+
+- Update README.md for significant changes
+- Add JSDoc comments for complex functions
+- Include code examples in documentation
+- Keep documentation up to date with code changes
+
+## 🔧 Development Setup
+
+### Prerequisites
+
+- Node.js 14.x or higher
+- npm 6.x or higher
+- Git
+
+### Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/[your-username]/[your-repo-name].git
+cd [your-repo-name]
+
+# Install dependencies
+npm run install:all
+
+# Start development servers
+npm start
+
+# Run tests
+npm test
+
+# Run linting
+npm run lint
+```
+
+### Project Structure
+
+```
+project/
+├── shell-app/              # Main container application
+├── feature1-app/           # Example micro-frontend
+├── package.json            # Root package.json with scripts
+├── README.md               # Main documentation
+└── setup.sh                # Setup script
+```
+
+## 🤝 Community Guidelines
+
+### Be Respectful
+
+- Use welcoming and inclusive language
+- Be respectful of differing viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on what is best for the community
+
+### Be Collaborative
+
+- Help others learn and grow
+- Share knowledge and resources
+- Provide constructive feedback
+- Support fellow contributors
+
+## 📄 License
+
+By contributing, you agree that your contributions will be licensed under the MIT License.
+
+## 💬 Getting Help
+
+- **Issues**: For bugs and feature requests
+- **Discussions**: For questions and general discussion
+- **Email**: For security-related issues (if applicable)
+
+## 🎯 What We're Looking For
+
+We're particularly interested in contributions that:
+
+- Improve documentation and examples
+- Add support for more frameworks (React, Vue.js micro-frontends)
+- Enhance the development experience
+- Add more deployment options
+- Improve performance and bundle size
+- Add comprehensive testing examples
+
+## 📋 Issue Labels
+
+- `bug`: Something isn't working
+- `enhancement`: New feature or request
+- `documentation`: Improvements or additions to documentation
+- `good first issue`: Good for newcomers
+- `help wanted`: Extra attention is needed
+- `question`: Further information is requested
+
+## 🏆 Recognition
+
+Contributors will be recognized in:
+
+- README.md contributors section
+- Release notes for significant contributions
+- GitHub contributors page
+
+Thank you for contributing! 🎉
