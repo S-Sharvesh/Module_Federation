@@ -9,15 +9,17 @@ A complete, production-ready Angular micro-frontend architecture template using 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Architecture](#architecture)
 - [Quick Start](#quick-start)
+- [Architecture](#architecture)
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
 - [Development Guide](#development-guide)
+- [Contributing](#contributing)
+- [Security](#security)
+- [Changelog](#changelog)
 - [Configuration](#configuration)
 - [Deployment](#deployment)
 - [FAQ & Troubleshooting](#faq--troubleshooting)
-- [Contributing](#contributing)
 
 ## Overview
 
@@ -138,6 +140,7 @@ graph LR
 
 - Node.js 14.x or higher
 - npm 6.x or higher
+- Angular CLI 13+
 - Git
 
 ### Automated Setup (Recommended)
@@ -180,6 +183,22 @@ cd shell-app && npm start
 - **Shell App**: http://localhost:4200
 - **Feature App**: http://localhost:5000
 
+### Available Scripts
+
+- `npm start` - Start all applications in development mode
+- `npm run build` - Build all applications for production
+- `npm test` - Run tests for all applications
+- `npm run lint` - Lint all applications
+- `npm run setup` - Run the setup script to customize the project
+- `npm run clean` - Clean all node_modules and build artifacts
+
+### Next Steps
+
+1. Open http://localhost:4200 in your browser
+2. Navigate through the application to see the micro-frontend in action
+3. Check the documentation sections below for detailed information
+4. Customize the project using the setup script
+
 ## 📁 Project Structure
 
 ```
@@ -191,7 +210,6 @@ cd shell-app && npm start
 │   │   │   ├── app.component.ts         # Shell application component
 │   │   │   └── 📁 error-page/           # Error handling components
 │   │   ├── 📁 environments/             # Environment configurations
-│   │   ├── bootstrap.ts                 # Module Federation bootstrap
 │   │   └── main.ts                      # Application bootstrap
 │   ├── webpack.config.js                # Module Federation configuration
 │   ├── webpack.prod.config.js           # Production configuration
@@ -220,12 +238,13 @@ cd shell-app && npm start
 │   └── angular-microfrontend-template.code-workspace
 │
 ├── setup.sh                         # Automated setup script
-├── package.json                     # Root package management
-├── .gitignore                       # Git ignore patterns
-└── README.md                        # This file
+├── README.md                        # This file
+├── CONTRIBUTING.md                  # Contribution guidelines
+├── CODE_OF_CONDUCT.md              # Code of conduct
+└── LICENSE                          # MIT-0 License
 ```
 
-##  How It Works
+## How It Works
 
 ### 1. Module Federation Configuration
 
@@ -309,7 +328,7 @@ sequenceDiagram
     Shell-->>Browser: Render complete app
 ```
 
-##  Development Guide
+## Development Guide
 
 ### Available NPM Scripts
 
@@ -400,7 +419,7 @@ gitgraph
     commit id: "Release v1.1.1"
 ```
 
-##  Configuration
+## Configuration
 
 ### Environment Configuration
 
@@ -478,7 +497,7 @@ module.exports = {
 };
 ```
 
-##  Deployment
+## Deployment
 
 ### Build Commands
 
@@ -654,7 +673,7 @@ npx webpack-bundle-analyzer shell-app/dist/stats.json
 <link rel="preload" href="http://localhost:5000/remoteEntry.js" as="script" />
 ```
 
-##  Customization
+## Customization
 
 ### Quick Customization with Setup Script
 
@@ -712,53 +731,143 @@ ng build shared-ui
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Here's how you can help:
+We love your input! We want to make contributing to this Angular micro-frontend template as easy and transparent as possible, whether it's:
 
-### How to Contribute
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make your changes** and add tests
-4. **Commit your changes**: `git commit -m 'Add amazing feature'`
-5. **Push to the branch**: `git push origin feature/amazing-feature`
-6. **Open a Pull Request**
+### Quick Start for Contributors
 
-### Development Setup for Contributors
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/[your-username]/[your-repo-name].git`
+3. Create a feature branch: `git checkout -b feature/amazing-feature`
+4. Install dependencies: `npm run install:all`
+5. Make your changes and test them: `npm start`
+6. Commit your changes: `git commit -m 'Add some amazing feature'`
+7. Push to the branch: `git push origin feature/amazing-feature`
+8. Open a Pull Request
+
+### Reporting Bugs
+
+**Great Bug Reports** tend to have:
+
+- A quick summary and/or background
+- Steps to reproduce
+  - Be specific!
+  - Give sample code if you can
+- What you expected would happen
+- What actually happens
+- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+
+### Suggesting Features
+
+We track feature requests as GitHub issues. When creating a feature request:
+
+- **Use a clear and descriptive title**
+- **Provide a detailed description** of the suggested feature
+- **Explain why this feature would be useful** to most users
+- **List some other projects where this feature exists** (if applicable)
+
+### Pull Request Process
+
+1. **Update the README.md** with details of changes if applicable
+2. **Add tests** for any new functionality
+3. **Ensure all tests pass**: `npm test`
+4. **Update documentation** for any changed functionality
+5. **Follow the coding standards** outlined below
+6. **Squash commits** if you have multiple commits for a single feature
+
+#### Pull Request Requirements
+
+- [ ] Tests pass locally
+- [ ] Code follows the style guidelines
+- [ ] Self-review of code completed
+- [ ] Documentation updated (if applicable)
+- [ ] No merge conflicts
+
+### Code Style Guidelines
+
+#### TypeScript/Angular Standards
+
+- Follow the [Angular Style Guide](https://angular.io/guide/styleguide)
+- Use TypeScript strict mode
+- Prefer `const` over `let`, avoid `var`
+- Use meaningful variable and function names
+- Add type annotations for all function parameters and return types
+
+#### File Organization
+
+- Keep components small and focused
+- Use barrel exports (`index.ts`) for clean imports
+- Group related files in feature folders
+- Follow Angular's recommended folder structure
+
+#### Naming Conventions
+
+- **Files**: kebab-case (e.g., `my-component.ts`)
+- **Classes**: PascalCase (e.g., `MyComponent`)
+- **Variables/Functions**: camelCase (e.g., `myVariable`)
+- **Constants**: SCREAMING_SNAKE_CASE (e.g., `MY_CONSTANT`)
+
+#### Code Formatting
+
+We use Prettier and ESLint. Before committing:
 
 ```bash
-# Fork and clone the repo
-git clone https://github.com/[your-username]/[your-repo-name].git
-cd [your-repo-name]
-
-# Install dependencies
-npm run install:all
-
-# Start development environment
-npm start
-
-# Run tests
-npm test
-
-# Check linting
 npm run lint
+npm run format  # if available
 ```
 
-### Reporting Issues
+### Testing Guidelines
 
-If you find a bug or have a feature request:
+- Write unit tests for all new components and services
+- Aim for at least 80% code coverage
+- Use meaningful test descriptions
+- Mock external dependencies
+- Test both success and error scenarios
 
-1. Check existing issues first
-2. Create a new issue using our templates
-3. Provide detailed information and reproduction steps
-4. Add relevant labels
+#### Running Tests
 
-### Code Style
+```bash
+# Run all tests
+npm test
 
-- Follow Angular style guide
-- Use TypeScript strict mode
-- Write unit tests for new features
-- Use meaningful commit messages
-- Update documentation for new features
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+### Community Guidelines
+
+#### Be Respectful
+
+- Use welcoming and inclusive language
+- Be respectful of differing viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on what is best for the community
+
+#### Be Collaborative
+
+- Help others learn and grow
+- Share knowledge and resources
+- Provide constructive feedback
+- Support fellow contributors
+
+### What We're Looking For
+
+We're particularly interested in contributions that:
+
+- Improve documentation and examples
+- Add support for more frameworks (React, Vue.js micro-frontends)
+- Enhance the development experience
+- Add more deployment options
+- Improve performance and bundle size
+- Add comprehensive testing examples
 
 ---
 
@@ -772,319 +881,281 @@ This project is licensed under the MIT-0 License - see the [LICENSE](LICENSE) fi
 
 If you find this template helpful, please consider:
 
--  Starring the repository
+- Starring the repository
 - 🐛 Reporting bugs
--  Suggesting new features
+- Suggesting new features
 - 🤝 Contributing to the project
 
 **Need help?** Open an issue or start a discussion!
-WS --> RS
-RS <--> MFR
-FA --> WF
-WF --> EM
-EM <--> MFR
-MFR --> CM
 
-    style SA fill:#e3f2fd
-    style FA fill:#fce4ec
-    style MFR fill:#fff8e1
+## Security
 
-````
+### Supported Versions
 
-##  Quick Start
+We provide security updates for the following versions:
 
-### Prerequisites
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.x.x   | ✅ |
+| < 1.0   | ❌ |
 
-- Node.js 14.x or higher
-- npm 6.x or higher
-- Git
+### Reporting a Vulnerability
 
-### Automated Setup (Recommended)
+We take security seriously. If you discover a security vulnerability, please follow these steps:
+
+#### Private Disclosure
+
+**DO NOT** open a public GitHub issue for security vulnerabilities.
+
+Instead, please report security vulnerabilities by:
+
+1. **Email**: Send details to [your-email@domain.com] (replace with your email)
+2. **Include**:
+   - Description of the vulnerability
+   - Steps to reproduce
+   - Potential impact
+   - Any suggested fixes (if you have them)
+
+#### What to Include
+
+- **Clear description** of the vulnerability
+- **Steps to reproduce** the issue
+- **Versions affected**
+- **Potential impact** and severity
+- **Any relevant logs** or screenshots
+- **Your contact information** for follow-up
+
+#### Response Timeline
+
+- **Acknowledgment**: Within 24 hours
+- **Initial assessment**: Within 72 hours
+- **Resolution timeline**: Depends on severity and complexity
+
+### Security Best Practices
+
+When using this template, consider these security practices:
+
+#### For Development
+
+- **Keep dependencies updated**: Regularly run `npm audit` and update packages
+- **Use environment variables**: Never commit sensitive data like API keys
+- **Validate inputs**: Always validate data from remote sources
+- **Use HTTPS**: Ensure all remote module federation URLs use HTTPS in production
+
+#### For Deployment
+
+- **Content Security Policy**: Configure proper CSP headers
+- **CORS Configuration**: Set appropriate CORS policies for your micro-frontends
+- **Authentication**: Implement proper authentication across all micro-frontends
+- **Monitoring**: Set up security monitoring and logging
+
+#### Module Federation Security
+
+- **Trusted Sources**: Only load micro-frontends from trusted domains
+- **Runtime Validation**: Validate loaded modules before execution
+- **Error Boundaries**: Implement proper error handling to prevent crashes
+- **Isolation**: Ensure proper isolation between micro-frontends
+
+### Security Configuration Examples
+
+#### Environment Variables (.env)
 
 ```bash
-# Clone the repository
-git clone https://github.com/[your-username]/[your-repo-name].git
-cd [your-repo-name]
-
-# Run automated setup
-chmod +x setup.sh
-./setup.sh
-````
-
-### Manual Setup
-
-```bash
-# 1. Clone and navigate
-git clone https://github.com/[your-username]/[your-repo-name].git
-cd [your-repo-name]
-
-# 2. Install dependencies for both applications
-cd shell-app && npm install && cd ..
-cd feature1-app && npm install && cd ..
-
-# 3. Start applications (requires 2 terminals)
-# Terminal 1: Feature app
-cd feature1-app && npm start
-
-# Terminal 2: Shell app
-cd shell-app && npm start
+# Example - DO NOT commit real values
+API_URL=https://api.yourdomain.com
+MFE_REMOTE_URL=https://mfe.yourdomain.com
+AUTH_SECRET=your-secret-key
 ```
 
-### Access Applications
+#### Content Security Policy
 
-- **Shell App**: http://localhost:4200
-- **Feature App**: http://localhost:5000
-
-## 📁 Project Structure
-
-```
-[your-repo-name]/
-├── 📁 shell-app/                    # Main container application
-│   ├── 📁 src/
-│   │   ├── 📁 app/
-│   │   │   ├── app-routing.module.ts    # Main routing with micro-frontend routes
-│   │   │   ├── app.component.ts         # Shell application component
-│   │   │   └── 📁 error-page/           # Error handling components
-│   │   ├── 📁 environments/             # Environment configurations
-│   │   └── main.ts                      # Application bootstrap
-│   ├── webpack.config.js                # Module Federation configuration
-│   ├── webpack.prod.config.js           # Production configuration
-│   └── package.json                     # Dependencies and scripts
-│
-├── 📁 feature1-app/                 # Micro-frontend application
-│   ├── 📁 src/
-│   │   ├── 📁 app/
-│   │   │   ├── 📁 mfe1/                 # Main feature module
-│   │   │   ├── app.module.ts            # Feature app module
-│   │   │   └── app-routing.module.ts    # Feature routing
-│   │   ├── 📁 environments/             # Environment configurations
-│   │   ├── bootstrap.ts                 # Module Federation bootstrap
-│   │   └── main.ts                      # Dynamic import for MF
-│   ├── webpack.config.js                # Module Federation configuration
-│   ├── webpack.prod.config.js           # Production configuration
-│   └── package.json                     # Dependencies and scripts
-│
-├── setup.sh                         # Automated setup script
-├── README.md                        # This file
-├── CONTRIBUTING.md                  # Contribution guidelines
-├── CODE_OF_CONDUCT.md              # Code of conduct
-└── LICENSE                          # MIT-0 License
+```html
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; 
+               script-src 'self' https://trusted-domain.com; 
+               style-src 'self' 'unsafe-inline';"
+/>
 ```
 
-##  How It Works
-
-### 1. Module Federation Configuration
-
-#### Shell App (Consumer)
+#### CORS Configuration
 
 ```javascript
-// shell-app/webpack.config.js
-const ModuleFederationPlugin = require("@angular-architects/module-federation/webpack");
-
-module.exports = {
-  plugins: [
-    new ModuleFederationPlugin({
-      remotes: {
-        mfe1: "http://localhost:5000/remoteEntry.js",
-      },
-    }),
-  ],
-};
+// Express.js example
+app.use(
+  cors({
+    origin: ["https://yourdomain.com", "https://mfe.yourdomain.com"],
+    credentials: true,
+  })
+);
 ```
 
-#### Feature App (Producer)
+## Changelog
 
-```javascript
-// feature1-app/webpack.config.js
-const ModuleFederationPlugin = require("@angular-architects/module-federation/webpack");
+All notable changes to this project will be documented in this file.
 
-module.exports = {
-  plugins: [
-    new ModuleFederationPlugin({
-      name: "mfe1",
-      exposes: {
-        "./Module": "./src/app/mfe1/mfe1.module.ts",
-      },
-    }),
-  ],
-};
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+### [Unreleased]
+
+#### Added
+
+- Initial project template release
+- Complete GitHub repository setup
+
+### [1.0.0] - 2024-07-16
+
+#### Added
+
+- **Shell Application**: Main container application with routing
+- **Feature Application**: Example micro-frontend with Module Federation
+- **Module Federation Setup**: Complete webpack configuration for runtime integration
+- **Development Workflow**: NPM scripts for development, testing, and building
+- **Documentation**: Comprehensive README with architecture diagrams
+- **Setup Script**: Automated project customization script
+- **GitHub Integration**:
+  - CI/CD workflow with GitHub Actions
+  - Issue templates for bugs, features, and questions
+  - Pull request template
+  - Security policy
+  - Contributing guidelines
+- **Environment Configuration**: Development and production environment files
+- **Build System**: Production-ready build configurations
+- **Testing Setup**: Unit test configurations for both applications
+- **Linting**: ESLint and Prettier configurations
+- **Git Configuration**: Comprehensive .gitignore file
+
+#### Features
+
+- **Modern Architecture**: Micro-frontend architecture using Module Federation
+- **Production Ready**: Complete build and deployment configurations
+- **Responsive Design**: Mobile-first responsive layouts
+- **Developer Experience**: Hot reload, debugging tools, and development scripts
+- **Documentation**: Extensive documentation with visual diagrams
+- **Testing**: Unit testing setup with Karma and Jasmine
+- **Code Quality**: ESLint, Prettier, and strict TypeScript configuration
+- **Security**: Security policy and best practices documentation
+- **Browser Support**: Support for modern browsers
+- **Performance**: Optimized builds with code splitting and lazy loading
+
+#### Technical Stack
+
+- **Frontend**: Angular 13.3
+- **Build Tool**: Webpack with Module Federation
+- **Language**: TypeScript
+- **Styling**: SCSS
+- **Testing**: Karma, Jasmine
+- **Linting**: ESLint, Prettier
+- **CI/CD**: GitHub Actions
+
+#### Project Structure
+
+```
+project/
+├── shell-app/              # Main container application (port 4200)
+├── feature1-app/           # Example micro-frontend (port 5000)
+├── .github/                # GitHub workflows and templates
+├── package.json            # Root package management
+├── setup.sh                # Automated setup script
+├── README.md               # Comprehensive documentation
+├── CONTRIBUTING.md         # Contribution guidelines
+├── SECURITY.md             # Security policy
+├── CHANGELOG.md            # This file
+└── LICENSE                 # MIT License
 ```
 
-### 2. Dynamic Loading Process
+#### Getting Started
 
-```mermaid
-flowchart TD
-    A[User navigates to /mfe1] --> B[Shell App Router]
-    B --> C{Route matches?}
-    C -->|Yes| D[Load Remote Module]
-    C -->|No| E[Show 404 Error]
-    D --> F[Module Federation Runtime]
-    F --> G[Fetch from Feature App]
-    G --> H[Load Component]
-    H --> I[Render in Shell]
-    E --> J[Error Page Component]
+1. Clone the repository
+2. Run `./setup.sh` to customize the project
+3. Install dependencies: `npm run install:all`
+4. Start development: `npm start`
+5. Access applications:
+   - Shell App: http://localhost:4200
+   - Feature App: http://localhost:5000
 
-    style A fill:#e8f5e8
-    style I fill:#e8f5e8
-    style E fill:#ffeaea
-    style J fill:#ffeaea
-```
+#### Development Commands
 
-### 3. Startup Sequence
+- `npm start` - Start both applications
+- `npm test` - Run all tests
+- `npm run build` - Build all applications
+- `npm run lint` - Run linting
+- `npm run clean` - Clean all builds and dependencies
 
-```mermaid
-sequenceDiagram
-    participant Dev as Developer
-    participant F1 as Feature App
-    participant Shell as Shell App
-    participant Browser
+#### Deployment
 
-    Dev->>F1: npm start (port 5000)
-    F1->>F1: Build & expose modules
-    F1-->>Dev:  Ready on :5000
+The template supports multiple deployment strategies:
 
-    Dev->>Shell: npm start (port 4200)
-    Shell->>Shell: Build shell application
-    Shell->>F1: Register remote entry
-    Shell-->>Dev:  Ready on :4200
+- Static hosting (Netlify, Vercel, GitHub Pages)
+- Container deployment (Docker, Kubernetes)
+- Cloud platforms (AWS, Azure, GCP)
 
-    Dev->>Browser: Navigate to localhost:4200
-    Browser->>Shell: Request page
-    Shell->>F1: Load feature module
-    F1-->>Shell: Return module
-    Shell-->>Browser: Render complete app
-```
+#### Browser Support
 
-##  Development Guide
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-### Adding a New Micro-Frontend
+### Release Notes Template
 
-1. **Create New Angular App**
+When creating new releases, use this template:
 
-```bash
-ng new my-feature-app
-cd my-feature-app
-npm install @angular-architects/module-federation
-```
+#### [Version] - YYYY-MM-DD
 
-2. **Configure Module Federation**
+##### Added
 
-```bash
-ng add @angular-architects/module-federation --project my-feature-app --type remote --port 5001
-```
+- New features and functionality
 
-3. **Update Shell App Configuration**
+##### Changed
 
-```javascript
-// shell-app/webpack.config.js
-remotes: {
-  "mfe1": "http://localhost:5000/remoteEntry.js",
-  "myFeature": "http://localhost:5001/remoteEntry.js"  // Add this
-}
-```
+- Changes to existing functionality
 
-4. **Add Routing in Shell App**
+##### Deprecated
 
-```typescript
-// shell-app/src/app/app-routing.module.ts
-{
-  path: 'my-feature',
-  loadChildren: () => loadRemoteModule({
-    type: 'module',
-    remoteEntry: 'http://localhost:5001/remoteEntry.js',
-    exposedModule: './Module'
-  }).then(m => m.MyFeatureModule)
-}
-```
+- Features that will be removed in future versions
 
-### Development Workflow
+##### Removed
 
-```mermaid
-gitgraph
-    commit id: "Initial setup"
-    branch feature-development
-    checkout feature-development
-    commit id: "Add new component"
-    commit id: "Update styling"
-    commit id: "Add tests"
-    checkout main
-    merge feature-development
-    commit id: "Release v1.1.0"
-    branch hotfix
-    checkout hotfix
-    commit id: "Fix critical bug"
-    checkout main
-    merge hotfix
-    commit id: "Release v1.1.1"
-```
+- Features removed in this version
 
-##  Deployment
+##### Fixed
 
-### Build Commands
+- Bug fixes
 
-```bash
-# Production build for shell app
-cd shell-app
-npm run build
+##### Security
 
-# Production build for feature app
-cd feature1-app
-npm run build
-```
-
-### Environment Configuration
-
-Create environment-specific configurations:
-
-```typescript
-// shell-app/src/environments/environment.prod.ts
-export const environment = {
-  production: true,
-  mfe1Url: "https://feature1.yourdomain.com/remoteEntry.js",
-};
-```
-
-##  Customization
-
-### Customization Checklist
-
-- [ ] Update application names in `package.json`
-- [ ] Modify branding and styling
-- [ ] Configure environment-specific URLs
-- [ ] Update routing paths
-- [ ] Add your own components and features
-- [ ] Configure deployment pipelines
-
-## 🐛 Troubleshooting
-
-### Common Issues and Solutions
-
-| Issue            | Cause                   | Solution                      |
-| ---------------- | ----------------------- | ----------------------------- |
-| Module not found | Feature app not running | Start feature app first       |
-| CORS errors      | Different origins       | Configure proper CORS headers |
-| Loading errors   | Network issues          | Check network connectivity    |
-| Build failures   | Version conflicts       | Check Angular/Node versions   |
-
-### Debug Mode
-
-```bash
-# Enable debug mode
-cd shell-app
-npm start -- --verbose
-
-cd feature1-app
-npm start -- --verbose
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-## 📄 License
-
-This project is licensed under the MIT-0 License - see the [LICENSE](LICENSE) file for details.
+- Security improvements and fixes
 
 ---
 
-**Happy coding! ** If you find this template helpful, please consider giving it a star 
+## Support & Community
+
+### Getting Help
+
+If you encounter any issues or have questions:
+
+- Check the documentation sections above
+- Search existing issues on GitHub
+- Create a new issue using the appropriate template
+- Join our community discussions
+
+### Acknowledgments
+
+- Angular team for the amazing framework
+- Webpack Module Federation for enabling micro-frontend architecture
+- All contributors who make this project better
+
+---
+
+**Made with ❤️ for the Angular community**
+
+If you find this template helpful, please consider:
+
+- ⭐ Starring the repository
+- 🐛 Reporting bugs
+- 💡 Suggesting new features
+- 🤝 Contributing to the project
+
+**Need help?** Open an issue or start a discussion!
