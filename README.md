@@ -1,12 +1,12 @@
 # Angular Micro-Frontend Template with Module Federation
 
-🚀 A complete, production-ready Angular micro-frontend architecture template using Module Federation. Perfect for building scalable, distributed web applications.
+A complete, production-ready Angular micro-frontend architecture template using Module Federation. Perfect for building scalable, distributed web applications.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Angular](https://img.shields.io/badge/Angular-13.3-red.svg)
 ![Module Federation](https://img.shields.io/badge/Module%20Federation-Enabled-green.svg)
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Architecture](#architecture)
@@ -19,7 +19,7 @@
 - [FAQ & Troubleshooting](#faq--troubleshooting)
 - [Contributing](#contributing)
 
-## 🎯 Overview
+## Overview
 
 This template demonstrates a modern micro-frontend architecture where:
 
@@ -29,13 +29,13 @@ This template demonstrates a modern micro-frontend architecture where:
 
 ### Key Benefits
 
-- ✅ **Independent Development** - Teams can work on different parts simultaneously
-- ✅ **Independent Deployment** - Deploy micro-frontends separately
-- ✅ **Technology Agnostic** - Mix different frameworks and versions
-- ✅ **Scalable Architecture** - Add new micro-frontends easily
-- ✅ **Code Sharing** - Share common libraries and components
+- **Independent Development** - Teams can work on different parts simultaneously
+- **Independent Deployment** - Deploy micro-frontends separately
+- **Technology Agnostic** - Mix different frameworks and versions
+- **Scalable Architecture** - Add new micro-frontends easily
+- **Code Sharing** - Share common libraries and components
 
-## 🏗️ Architecture
+## Architecture
 
 ### High-Level Architecture Diagram
 
@@ -132,7 +132,7 @@ graph LR
     style MFR fill:#fff8e1
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -225,7 +225,7 @@ cd shell-app && npm start
 └── README.md                        # This file
 ```
 
-## 🔧 How It Works
+##  How It Works
 
 ### 1. Module Federation Configuration
 
@@ -295,12 +295,12 @@ sequenceDiagram
 
     Dev->>F1: npm start (port 5000)
     F1->>F1: Build & expose modules
-    F1-->>Dev: ✅ Ready on :5000
+    F1-->>Dev:  Ready on :5000
 
     Dev->>Shell: npm start (port 4200)
     Shell->>Shell: Build shell application
     Shell->>F1: Register remote entry
-    Shell-->>Dev: ✅ Ready on :4200
+    Shell-->>Dev:  Ready on :4200
 
     Dev->>Browser: Navigate to localhost:4200
     Browser->>Shell: Request page
@@ -309,7 +309,7 @@ sequenceDiagram
     Shell-->>Browser: Render complete app
 ```
 
-## 👨‍💻 Development Guide
+##  Development Guide
 
 ### Available NPM Scripts
 
@@ -400,7 +400,7 @@ gitgraph
     commit id: "Release v1.1.1"
 ```
 
-## ⚙️ Configuration
+##  Configuration
 
 ### Environment Configuration
 
@@ -478,7 +478,7 @@ module.exports = {
 };
 ```
 
-## 🚀 Deployment
+##  Deployment
 
 ### Build Commands
 
@@ -654,7 +654,7 @@ npx webpack-bundle-analyzer shell-app/dist/stats.json
 <link rel="preload" href="http://localhost:5000/remoteEntry.js" as="script" />
 ```
 
-## 🎨 Customization
+##  Customization
 
 ### Quick Customization with Setup Script
 
@@ -768,13 +768,13 @@ This project is licensed under the MIT-0 License - see the [LICENSE](LICENSE) fi
 
 ---
 
-**Happy coding! 🚀**
+**Happy coding! **
 
 If you find this template helpful, please consider:
 
-- ⭐ Starring the repository
+-  Starring the repository
 - 🐛 Reporting bugs
-- 💡 Suggesting new features
+-  Suggesting new features
 - 🤝 Contributing to the project
 
 **Need help?** Open an issue or start a discussion!
@@ -791,7 +791,7 @@ MFR --> CM
 
 ````
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -871,7 +871,7 @@ cd shell-app && npm start
 └── LICENSE                          # MIT-0 License
 ```
 
-## 🔧 How It Works
+##  How It Works
 
 ### 1. Module Federation Configuration
 
@@ -941,12 +941,12 @@ sequenceDiagram
 
     Dev->>F1: npm start (port 5000)
     F1->>F1: Build & expose modules
-    F1-->>Dev: ✅ Ready on :5000
+    F1-->>Dev:  Ready on :5000
 
     Dev->>Shell: npm start (port 4200)
     Shell->>Shell: Build shell application
     Shell->>F1: Register remote entry
-    Shell-->>Dev: ✅ Ready on :4200
+    Shell-->>Dev:  Ready on :4200
 
     Dev->>Browser: Navigate to localhost:4200
     Browser->>Shell: Request page
@@ -955,7 +955,7 @@ sequenceDiagram
     Shell-->>Browser: Render complete app
 ```
 
-## 👨‍💻 Development Guide
+##  Development Guide
 
 ### Adding a New Micro-Frontend
 
@@ -1018,7 +1018,7 @@ gitgraph
     commit id: "Release v1.1.1"
 ```
 
-## 🚀 Deployment
+##  Deployment
 
 ### Build Commands
 
@@ -1044,7 +1044,7 @@ export const environment = {
 };
 ```
 
-## 🎨 Customization
+##  Customization
 
 ### Customization Checklist
 
@@ -1087,4 +1087,4 @@ This project is licensed under the MIT-0 License - see the [LICENSE](LICENSE) fi
 
 ---
 
-**Happy coding! 🚀** If you find this template helpful, please consider giving it a star ⭐
+**Happy coding! ** If you find this template helpful, please consider giving it a star 

@@ -1,4 +1,4 @@
-## 📋 Pull Request Description
+##  Pull Request Description
 
 **What does this PR do?**
 A clear and concise description of what this pull request accomplishes.
@@ -8,18 +8,18 @@ Closes #[issue number]
 Fixes #[issue number]
 Relates to #[issue number]
 
-## 🔄 Type of Change
+##  Type of Change
 
 - [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
-- [ ] ✨ New feature (non-breaking change which adds functionality)
+- [ ]  New feature (non-breaking change which adds functionality)
 - [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] 📚 Documentation update
-- [ ] 🎨 Code style/formatting changes
-- [ ] ♻️ Code refactoring (no functional changes)
-- [ ] ⚡ Performance improvements
+- [ ]  Documentation update
+- [ ]  Code style/formatting changes
+- [ ]  Code refactoring (no functional changes)
+- [ ]  Performance improvements
 - [ ] 🧪 Adding or updating tests
-- [ ] 🔧 Build system changes
-- [ ] 🚀 Deployment changes
+- [ ]  Build system changes
+- [ ]  Deployment changes
 
 ## 🧪 Testing
 
@@ -39,7 +39,7 @@ Describe the testing you've done:
 - [ ] Tested on multiple browsers (if applicable)
 - [ ] Tested responsive design (if applicable)
 
-## 📱 Screenshots/Videos
+##  Screenshots/Videos
 
 If applicable, add screenshots or videos to help explain your changes.
 
@@ -49,7 +49,7 @@ If applicable, add screenshots or videos to help explain your changes.
 **After:**
 [Screenshot/description of after state]
 
-## ✅ Checklist
+##  Checklist
 
 **Code Quality**
 
@@ -77,7 +77,7 @@ If applicable, add screenshots or videos to help explain your changes.
 - [ ] Bundle size impact is acceptable (if applicable)
 - [ ] No performance regressions introduced
 
-## 🔄 Migration Guide
+##  Migration Guide
 
 If this is a breaking change, please describe:
 
@@ -85,7 +85,7 @@ If this is a breaking change, please describe:
 2. How to migrate existing code
 3. Timeline for deprecation (if applicable)
 
-## 📚 Documentation
+##  Documentation
 
 - [ ] README.md updated (if needed)
 - [ ] Code comments added/updated
@@ -101,7 +101,7 @@ If applicable, list browsers where this has been tested:
 - [ ] Safari
 - [ ] Edge
 
-## 📝 Additional Notes
+##  Additional Notes
 
 Any additional information that reviewers should know about this PR.
 

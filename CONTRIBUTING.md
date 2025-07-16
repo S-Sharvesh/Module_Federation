@@ -8,7 +8,7 @@ We love your input! We want to make contributing to this Angular micro-frontend 
 - Proposing new features
 - Becoming a maintainer
 
-## 🚀 Quick Start for Contributors
+##  Quick Start for Contributors
 
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/[your-username]/[your-repo-name].git`
@@ -33,7 +33,7 @@ We love your input! We want to make contributing to this Angular micro-frontend 
 
 **Use the bug report template** when creating issues.
 
-## 💡 Suggesting Features
+##  Suggesting Features
 
 We track feature requests as GitHub issues. When creating a feature request:
 
@@ -42,7 +42,7 @@ We track feature requests as GitHub issues. When creating a feature request:
 - **Explain why this feature would be useful** to most users
 - **List some other projects where this feature exists** (if applicable)
 
-## 📝 Pull Request Process
+##  Pull Request Process
 
 1. **Update the README.md** with details of changes if applicable
 2. **Add tests** for any new functionality
@@ -59,7 +59,7 @@ We track feature requests as GitHub issues. When creating a feature request:
 - [ ] Documentation updated (if applicable)
 - [ ] No merge conflicts
 
-## 🎨 Code Style Guidelines
+##  Code Style Guidelines
 
 ### TypeScript/Angular Standards
 
@@ -113,14 +113,14 @@ npm run test:coverage
 npm run test:watch
 ```
 
-## 📚 Documentation
+##  Documentation
 
 - Update README.md for significant changes
 - Add JSDoc comments for complex functions
 - Include code examples in documentation
 - Keep documentation up to date with code changes
 
-## 🔧 Development Setup
+##  Development Setup
 
 ### Prerequisites
 
@@ -185,7 +185,7 @@ By contributing, you agree that your contributions will be licensed under the MI
 - **Discussions**: For questions and general discussion
 - **Email**: For security-related issues (if applicable)
 
-## 🎯 What We're Looking For
+##  What We're Looking For
 
 We're particularly interested in contributions that:
 
@@ -196,7 +196,7 @@ We're particularly interested in contributions that:
 - Improve performance and bundle size
 - Add comprehensive testing examples
 
-## 📋 Issue Labels
+##  Issue Labels
 
 - `bug`: Something isn't working
 - `enhancement`: New feature or request
@@ -205,7 +205,7 @@ We're particularly interested in contributions that:
 - `help wanted`: Extra attention is needed
 - `question`: Further information is requested
 
-## 🏆 Recognition
+##  Recognition
 
 Contributors will be recognized in:
 
@@ -213,4 +213,4 @@ Contributors will be recognized in:
 - Release notes for significant contributions
 - GitHub contributors page
 
-Thank you for contributing! 🎉
+Thank you for contributing! 

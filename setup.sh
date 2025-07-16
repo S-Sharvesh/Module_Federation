@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Angular Micro-frontend Template Setup Script
-echo "🚀 Welcome to Angular Micro-frontend Template Setup!"
+echo " Welcome to Angular Micro-frontend Template Setup!"
 echo "This script will help you customize the template for your project."
 echo ""
 
@@ -42,7 +42,7 @@ if [[ -z "$REPO_NAME" ]]; then
 fi
 
 echo ""
-echo "📝 Updating project files..."
+echo " Updating project files..."
 
 # Function to safely update files
 update_file() {
@@ -58,7 +58,7 @@ update_file() {
         fi
         echo "  ✓ Updated $file"
     else
-        echo "  ⚠ Warning: $file not found"
+        echo "  Warning: $file not found"
     fi
 }
 
@@ -89,23 +89,23 @@ update_file "package.json" "\[your-username\]" "$GITHUB_USERNAME"
 update_file "package.json" "\[your-repo-name\]" "$REPO_NAME"
 
 echo ""
-echo "✅ Project setup complete!"
+echo " Project setup complete!"
 echo ""
-echo "📋 Summary:"
+echo " Summary:"
 echo "  Project Name: $PROJECT_NAME"
 echo "  Author: $AUTHOR_NAME"
 echo "  GitHub Username: $GITHUB_USERNAME"
 echo "  Repository Name: $REPO_NAME"
 echo ""
-echo "🎯 Next steps:"
+echo " Next steps:"
 echo "  1. Run 'npm run install:all' to install dependencies"
 echo "  2. Run 'npm start' to start development servers"
 echo "  3. Start building your micro-frontend architecture!"
 echo ""
-echo "📚 All documentation is in README.md"
+echo " All documentation is in README.md"
 echo ""
-echo "🔗 URLs after starting:"
+echo " URLs after starting:"
 echo "  • Shell App: http://localhost:4200"
 echo "  • Feature1 App: http://localhost:5000"
 echo ""
-echo "Happy coding! 🎉"
+echo "Happy coding! "

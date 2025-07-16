@@ -2,7 +2,7 @@
   <!-- Header -->
   <header class="app-header">
     <div class="header-content">
-      <h1 class="app-title">🚀 Module Federation Shell</h1>
+      <h1 class="app-title"> Module Federation Shell</h1>
       <p class="app-subtitle">Micro-Frontend Architecture Demo</p>
     </div>
   </header>
@@ -22,7 +22,7 @@
         [class.active]="currentRoute === 'mfe1'"
         (click)="navigateToMfe1()"
       >
-        📱 Feature App 1
+         Feature App 1
       </button>
     </div>
   </nav>
@@ -40,19 +40,19 @@
 
         <div class="stats-grid">
           <div class="stat-card">
-            <h3>🎯 Current Route</h3>
+            <h3> Current Route</h3>
             <p>{{ currentRoute }}</p>
           </div>
           <div class="stat-card">
-            <h3>⏱️ Last Load Time</h3>
+            <h3> Last Load Time</h3>
             <p>{{ lastLoadTime ? lastLoadTime + "ms" : "Not measured" }}</p>
           </div>
           <div class="stat-card">
-            <h3>🔄 Total Navigations</h3>
+            <h3> Total Navigations</h3>
             <p>{{ navigationCount }}</p>
           </div>
           <div class="stat-card">
-            <h3>📊 Performance</h3>
+            <h3> Performance</h3>
             <p class="performance-indicator" [ngClass]="getPerformanceClass()">
               {{ getPerformanceText() }}
             </p>
@@ -79,7 +79,7 @@
     <div class="mfe-container" [class.hidden]="currentRoute === 'home'">
       <div class="mfe-info" *ngIf="currentRoute === 'mfe1' && !isLoading">
         <div class="mfe-header">
-          <h3>📱 Feature App 1 - Loaded Successfully!</h3>
+          <h3> Feature App 1 - Loaded Successfully!</h3>
           <div class="load-stats">
             <span class="load-time">Load Time: {{ lastLoadTime }}ms</span>
             <span class="load-status">Status: Active</span>

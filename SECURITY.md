@@ -26,7 +26,7 @@ Instead, please report security vulnerabilities by:
    - Potential impact
    - Any suggested fixes (if you have them)
 
-### 📋 What to Include
+###  What to Include
 
 - **Clear description** of the vulnerability
 - **Steps to reproduce** the issue
@@ -35,13 +35,13 @@ Instead, please report security vulnerabilities by:
 - **Any relevant logs** or screenshots
 - **Your contact information** for follow-up
 
-### ⏱️ Response Timeline
+###  Response Timeline
 
 - **Acknowledgment**: Within 24 hours
 - **Initial assessment**: Within 72 hours
 - **Resolution timeline**: Depends on severity and complexity
 
-### 🛡️ Security Best Practices
+###  Security Best Practices
 
 When using this template, consider these security practices:
 
@@ -66,7 +66,7 @@ When using this template, consider these security practices:
 - **Error Boundaries**: Implement proper error handling to prevent crashes
 - **Isolation**: Ensure proper isolation between micro-frontends
 
-### 🔧 Security Configuration Examples
+###  Security Configuration Examples
 
 #### Environment Variables (.env)
 
@@ -100,7 +100,7 @@ app.use(
 );
 ```
 
-### 🚨 Known Security Considerations
+###  Known Security Considerations
 
 1. **Module Federation Risks**
 
@@ -117,13 +117,13 @@ app.use(
    - Be careful with shared state between micro-frontends
    - Sanitize data passed between applications
 
-### 📚 Security Resources
+###  Security Resources
 
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [Angular Security Guide](https://angular.io/guide/security)
 - [Module Federation Security Best Practices](https://webpack.js.org/concepts/module-federation/)
 
-### 🏆 Security Champions
+###  Security Champions
 
 We appreciate security researchers and contributors who help keep our project safe:
 
@@ -131,7 +131,7 @@ We appreciate security researchers and contributors who help keep our project sa
 - Work with us on fixes
 - Get recognized in our security acknowledgments
 
-### 📝 Security Updates
+###  Security Updates
 
 Security updates will be:
 
@@ -139,7 +139,7 @@ Security updates will be:
 - **Documented** in release notes
 - **Communicated** via GitHub releases and security advisories
 
-### ⚖️ Responsible Disclosure
+###  Responsible Disclosure
 
 We follow responsible disclosure practices:
 
