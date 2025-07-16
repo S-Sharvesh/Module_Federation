@@ -199,42 +199,42 @@ cd shell-app && npm start
 3. Check the documentation sections below for detailed information
 4. Customize the project using the setup script
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 [your-repo-name]/
-├── 📁 shell-app/                    # Main container application
-│   ├── 📁 src/
-│   │   ├── 📁 app/
+├── shell-app/                    # Main container application
+│   ├── src/
+│   │   ├── app/
 │   │   │   ├── app-routing.module.ts    # Main routing with micro-frontend routes
 │   │   │   ├── app.component.ts         # Shell application component
-│   │   │   └── 📁 error-page/           # Error handling components
-│   │   ├── 📁 environments/             # Environment configurations
+│   │   │   └── error-page/           # Error handling components
+│   │   ├── environments/             # Environment configurations
 │   │   └── main.ts                      # Application bootstrap
 │   ├── webpack.config.js                # Module Federation configuration
 │   ├── webpack.prod.config.js           # Production configuration
 │   └── package.json                     # Dependencies and scripts
 │
-├── 📁 feature1-app/                 # Micro-frontend application
-│   ├── 📁 src/
-│   │   ├── 📁 app/
-│   │   │   ├── 📁 mfe1/                 # Main feature module
+├── feature1-app/                 # Micro-frontend application
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── mfe1/                 # Main feature module
 │   │   │   ├── app.module.ts            # Feature app module
 │   │   │   └── app-routing.module.ts    # Feature routing
-│   │   ├── 📁 environments/             # Environment configurations
+│   │   ├── environments/             # Environment configurations
 │   │   ├── bootstrap.ts                 # Module Federation bootstrap
 │   │   └── main.ts                      # Dynamic import for MF
 │   ├── webpack.config.js                # Module Federation configuration
 │   ├── webpack.prod.config.js           # Production configuration
 │   └── package.json                     # Dependencies and scripts
 │
-├── 📁 .github/                      # GitHub Actions & templates
-│   ├── 📁 workflows/
+├── .github/                      # GitHub Actions & templates
+│   ├── workflows/
 │   │   └── ci.yml                       # Continuous Integration pipeline
-│   ├── 📁 ISSUE_TEMPLATE/               # Issue templates
+│   ├── ISSUE_TEMPLATE/               # Issue templates
 │   └── pull_request_template.md         # PR template
 │
-├── 📁 .vscode/                      # VS Code workspace configuration
+├── .vscode/                      # VS Code workspace configuration
 │   └── angular-microfrontend-template.code-workspace
 │
 ├── setup.sh                         # Automated setup script
@@ -401,23 +401,45 @@ remotes: {
 ### Development Workflow
 
 ```mermaid
-gitgraph
-    commit id: "Initial setup"
-    branch feature-development
-    checkout feature-development
-    commit id: "Add new component"
-    commit id: "Update styling"
-    commit id: "Add tests"
-    checkout main
-    merge feature-development
-    commit id: "Release v1.1.0"
-    branch hotfix
-    checkout hotfix
-    commit id: "Fix critical bug"
-    checkout main
-    merge hotfix
-    commit id: "Release v1.1.1"
+graph TD
+    A[Initial setup] --> B[Create feature branch]
+    B --> C[Add new component]
+    C --> D[Update styling]
+    D --> E[Add tests]
+    E --> F[Merge to main]
+    F --> G[Release v1.1.0]
+    G --> H[Hotfix branch]
+    H --> I[Fix critical bug]
+    I --> J[Merge hotfix]
+    J --> K[Release v1.1.1]
+
+    style A fill:#e1f5fe
+    style G fill:#e8f5e8
+    style K fill:#e8f5e8
+    style H fill:#fff3e0
+    style I fill:#fff3e0
 ```
+
+**Recommended Git Flow:**
+
+1. **Feature Development**
+
+   ```bash
+   git checkout -b feature/new-component
+   # Make changes
+   git commit -m "feat: add new component"
+   git push origin feature/new-component
+   # Create PR and merge
+   ```
+
+2. **Hotfix Process**
+   ```bash
+   git checkout -b hotfix/critical-fix
+   # Fix the issue
+   git commit -m "fix: resolve critical bug"
+   git push origin hotfix/critical-fix
+   # Create PR and merge
+   ```
 
 ## Configuration
 
@@ -603,7 +625,7 @@ jobs:
           app_location: "shell-app/dist"
 ```
 
-## 🐛 FAQ & Troubleshooting
+## FAQ & Troubleshooting
 
 ### Frequently Asked Questions
 
@@ -729,7 +751,7 @@ ng generate library shared-ui
 ng build shared-ui
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We love your input! We want to make contributing to this Angular micro-frontend template as easy and transparent as possible, whether it's:
 
@@ -882,9 +904,9 @@ This project is licensed under the MIT-0 License - see the [LICENSE](LICENSE) fi
 If you find this template helpful, please consider:
 
 - Starring the repository
-- 🐛 Reporting bugs
+- Reporting bugs
 - Suggesting new features
-- 🤝 Contributing to the project
+- Contributing to the project
 
 **Need help?** Open an issue or start a discussion!
 
@@ -894,10 +916,10 @@ If you find this template helpful, please consider:
 
 We provide security updates for the following versions:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x.x   | ✅ |
-| < 1.0   | ❌ |
+| Version | Supported |
+| ------- | --------- |
+| 1.x.x   | Yes       |
+| < 1.0   | No        |
 
 ### Reporting a Vulnerability
 
@@ -1149,13 +1171,13 @@ If you encounter any issues or have questions:
 
 ---
 
-**Made with ❤️ for the Angular community**
+**Made with love for the Angular community**
 
 If you find this template helpful, please consider:
 
-- ⭐ Starring the repository
-- 🐛 Reporting bugs
-- 💡 Suggesting new features
-- 🤝 Contributing to the project
+- Starring the repository
+- Reporting bugs
+- Suggesting new features
+- Contributing to the project
 
 **Need help?** Open an issue or start a discussion!
